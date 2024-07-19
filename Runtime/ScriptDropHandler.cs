@@ -38,6 +38,12 @@ public class DropHandler
     public static GameObject CreateObj(string name)
     {
         GameObject go = new GameObject(name);
+
+        if (Selection.activeGameObject)
+        {
+            go.transform.parent = Selection.activeGameObject.transform;
+        }
+        
         Selection.activeObject = go;
         return go;
     }
